@@ -45,3 +45,19 @@ nginx -V 2>&1 | grep -- --with-stream
 
    ```
 
+
+
+
+Remove  Nignx
+```
+   sudo apt remove nginx nginx-common nginx-full
+```
+Add the official Nginx repository:
+
+```
+sudo apt update
+sudo apt install curl gnupg2 ca-certificates lsb-release
+echo "deb http://nginx.org/packages/ubuntu $(lsb_release -cs) nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+sudo apt update
+```
